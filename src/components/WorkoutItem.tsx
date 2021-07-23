@@ -1,14 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import {
-  Text,
-  Progress,
-  Box,
-  Stack,
-  Button,
-  Center,
-  chakra,
-  Flex,
-} from "@chakra-ui/react";
+import { Text, Progress, Box, Stack, Button, chakra } from "@chakra-ui/react";
 
 enum STATUS {
   STARTED,
@@ -18,7 +9,7 @@ enum STATUS {
 type callbackFunction = () => void;
 
 const useInterval = (callback: callbackFunction, delay: number | null) => {
-  const savedCallback = React.useRef<callbackFunction | null>(null);
+  const savedCallback = useRef<callbackFunction | null>(null);
 
   // remember the last callback
   useEffect(() => {
@@ -38,12 +29,24 @@ const useInterval = (callback: callbackFunction, delay: number | null) => {
     }
   }, [delay]);
 };
-
+/**
+ *
+type State = {
+  secondsRemaining: number;
+  status: STATUS;
+  progress: number;
+  sets: number;
+  secondsToDisplay: number;
+  minutesRemaining: number;
+  minutesToDisplay: number;
+};
+ */
 const WorkoutItem = () => {
   const [secondsRemaining, setSecondsRemaining] = useState(180);
   const [status, setStatus] = useState<STATUS>(STATUS.STOPPED);
   const [progress, setProgress] = useState(0);
   const [sets, setSets] = useState(3);
+  const [active, setActive] = useState({ start: false, stop: false });
   const secondsToDisplay = secondsRemaining % 60;
   const minutesRemaining = (secondsRemaining - secondsToDisplay) / 60;
   const minutesToDisplay = minutesRemaining % 60;
@@ -64,19 +67,25 @@ const WorkoutItem = () => {
   );
 
   const handleStart = () => {
+    setActive({ start: true, stop: false });
     setStatus(STATUS.STARTED);
   };
   const handleStop = () => {
+    setActive({ start: false, stop: true });
     setStatus(STATUS.STOPPED);
   };
   const handleReset = () => {
+    setActive({ start: false, stop: false });
     setStatus(STATUS.STOPPED);
     setSecondsRemaining(180);
   };
+  if (sets === 0) {
+    return <></>;
+  }
   return (
     <Box marginTop="4" border="4px" borderColor="royalblue">
       <chakra.h3>Bench press</chakra.h3>
-      <Text>Reps: 5</Text>
+      <Text fontSize="md">Reps: 5</Text>
       <Text>Sets: {sets}</Text>
       <Stack direction={["column", "row"]}>
         <Box as="button">
@@ -84,12 +93,24 @@ const WorkoutItem = () => {
             {minutesToDisplay} minutes {secondsToDisplay} seconds
           </Text>
         </Box>
-        <Button onClick={() => handleStart()}>Start</Button>
-        <Button onClick={() => handleStop()}>Stop</Button>
+        <Button
+          isActive={active.start}
+          colorScheme="teal"
+          onClick={() => handleStart()}
+        >
+          Start
+        </Button>
+        <Button
+          isActive={active.stop}
+          colorScheme="teal"
+          onClick={() => handleStop()}
+        >
+          Stop
+        </Button>
         <Button onClick={() => handleReset()}>Reset</Button>
       </Stack>
       <p>weight: 45 pounds</p>
-      <Progress value={100} size="lg" colorScheme="teal" />
+      <Progress value={progress} size="lg" colorScheme="teal" />
     </Box>
   );
 };

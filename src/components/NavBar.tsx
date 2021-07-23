@@ -1,6 +1,6 @@
 import React from "react";
 import NavItem from "./NavItem";
-import { Flex, Box, Heading, Spacer, Button } from "@chakra-ui/react";
+import { Flex, Box, Heading, Spacer } from "@chakra-ui/react";
 
 export default function NavBar() {
   return (

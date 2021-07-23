@@ -1,14 +1,6 @@
-import React, { Suspense } from "react";
+import React from "react";
 import Exercise from "./Exercise";
-import {
-  Flex,
-  Box,
-  Container,
-  Text,
-  Stack,
-  chakra,
-  Spacer,
-} from "@chakra-ui/react";
+import { Flex, chakra, Spacer } from "@chakra-ui/react";
 
 export default function Exercises() {
   return (

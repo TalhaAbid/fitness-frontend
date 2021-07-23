@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Box,
-  Center,
   useColorModeValue,
   Heading,
   Text,
