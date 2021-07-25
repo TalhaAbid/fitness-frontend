@@ -1,6 +1,8 @@
 import React from "react";
-import Exercise from "./Exercise";
+import One from "./Exercise";
+import { Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Eleven, Twelve} from "./Exercise";
 import { Flex, chakra, Spacer } from "@chakra-ui/react";
+
 
 export default function Exercises() {
   return (
@@ -15,19 +17,32 @@ export default function Exercises() {
       </chakra.h1>
 
       <Flex wrap="wrap" align="center">
-        <Exercise />
+        <One />
         <Spacer />
-        <Exercise />
+        <Two />
         <Spacer />
-        <Exercise />
+        <Three />
         <Spacer />
-        <Exercise />
+        <Four />
         <Spacer />
-        <Exercise />
+        <Five />
         <Spacer />
-        <Exercise />
+        <Six />
+        <Spacer />
+        <Seven />
+        <Spacer />
+        <Eight />
+        <Spacer />
+        <Nine />
+        <Spacer />
+        <Ten />
+        <Spacer />
+        <Eleven />
+        <Spacer />
+        <Twelve />
         <Spacer />
       </Flex>
     </div>
   );
 }
+
