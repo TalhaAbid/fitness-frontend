@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import WorkoutItem from "./WorkoutItem";
+import Finished from "./Finished";
+import { Box } from "@chakra-ui/react";
+import Exercise from "./Exercise";
 export default function TodaysWorkot() {
-  return (
-    <div>
+  let begin = false;
+  const [current, setCurrent] = useState(<div></div>);
+  let started = (
+    <Box>
       <WorkoutItem />
-      <WorkoutItem />
-      <WorkoutItem />
-      <WorkoutItem />
-    </div>
+    </Box>
   );
+  let start = <button></button>;
+  return started;
 }

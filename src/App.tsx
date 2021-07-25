@@ -7,6 +7,7 @@ import create from "zustand";
 import { persist } from "zustand/middleware";
 import Navbar from "./components/NavBar";
 import TodaysWorkot from "./components/TodaysWorkout";
+import { Box } from "@chakra-ui/react";
 
 type State = {
   token: string | null;
@@ -35,7 +36,7 @@ function App() {
     return <Login setToken={setToken} />;
   }
   return (
-    <div className="wrapper">
+    <Box>
       <Navbar />
       <Switch>
         <Route path="/Exercises">
@@ -48,7 +49,7 @@ function App() {
           <TodaysWorkot />
         </Route>
       </Switch>
-    </div>
+    </Box>
   );
 }
 

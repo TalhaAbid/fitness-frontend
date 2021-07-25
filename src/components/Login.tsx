@@ -35,6 +35,9 @@ const Login = ({ setToken }: LoginProps) => {
           <Text fontSize={"lg"} color={"gray.600"}>
             to get access to all your workouts
           </Text>
+          <Text fontSize={"lg"} color={"gray.600"}>
+            Default username: talha, password: talha
+          </Text>
         </Stack>
         <Box
           rounded={"lg"}
