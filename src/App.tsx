@@ -13,6 +13,7 @@ type State = {
   token: string | null;
   setToken: (tok: string, rememberPassword: boolean) => void;
 };
+
 const useStore = create<State>(
   persist(
     (set) => ({
@@ -35,6 +36,7 @@ function App() {
   if (token === null) {
     return <Login setToken={setToken} />;
   }
+
   return (
     <Box>
       <Navbar />

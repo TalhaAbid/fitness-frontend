@@ -9,8 +9,77 @@ import {
   Spacer,
 } from "@chakra-ui/react";
 
+interface exerciseType {
+  name: string;
+  target: string;
+  imageSrc: string;
+}
 
-export default function One() {
+interface exerciseProps {
+  exercise: exerciseType;
+}
+
+export default function Exercise(props: exerciseProps) {
+  const { name, target, imageSrc } = props.exercise;
+  return (
+    <Box mb="14">
+      <Box
+        role={"group"}
+        p={6}
+        w="400px"
+        h="400px"
+        bg={useColorModeValue("white", "gray.800")}
+        boxShadow={"2xl"}
+        rounded={"lg"}
+        pos={"relative"}
+        zIndex={1}
+      >
+        <Box
+          rouned={"lg"}
+          mt={-12}
+          pos={"relative"}
+          height={"230px"}
+          _after={{
+            transition: "all .3s ease",
+            content: '""',
+            w: "full",
+            h: "full",
+            pos: "absolute",
+            top: 5,
+            left: 0,
+            backgroundImage: `url("../exercises_image/Plie_squat_scoop_up.gif")`,
+            filter: "blur(15px)",
+            zIndex: -1,
+          }}
+          _groupHover={{
+            _after: {
+              filter: "blur(20px)",
+            },
+          }}
+        >
+          <Image
+            src={imageSrc}
+            rouned={"lg"}
+            height={260}
+            width={300}
+            objectFit="fill"
+          />
+        </Box>
+        <Stack pt={10} align={"center"}>
+          <Text color={"gray.500"} fontSize={"sm"} textTransform={"uppercase"}>
+            {target}
+          </Text>
+          <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
+            {name}
+          </Heading>
+        </Stack>
+      </Box>
+      <Spacer />
+    </Box>
+  );
+}
+
+export function One() {
   return (
     <Box mb="14">
       <Box
@@ -60,7 +129,7 @@ export default function One() {
             Core
           </Text>
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
-          Plie squat scoop up
+            Plie squat scoop up
           </Heading>
         </Stack>
       </Box>
@@ -119,7 +188,7 @@ export function Two() {
             Lower Body
           </Text>
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
-          Squat curl
+            Squat curl
           </Heading>
         </Stack>
       </Box>
@@ -177,7 +246,7 @@ export function Three() {
             Lower Body
           </Text>
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
-          Cossack squat 
+            Cossack squat
           </Heading>
         </Stack>
       </Box>
@@ -235,7 +304,7 @@ export function Four() {
             Core
           </Text>
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
-          Diamond kicks
+            Diamond kicks
           </Heading>
         </Stack>
       </Box>
@@ -293,7 +362,7 @@ export function Five() {
             Core
           </Text>
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
-          Split squat press exercise
+            Split squat press exercise
           </Heading>
         </Stack>
       </Box>
@@ -351,7 +420,7 @@ export function Six() {
             Upper Body
           </Text>
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
-          Deadlift upright row
+            Deadlift upright row
           </Heading>
         </Stack>
       </Box>
@@ -409,7 +478,7 @@ export function Seven() {
             Lower Body
           </Text>
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
-          Double pulse squat jump
+            Double pulse squat jump
           </Heading>
         </Stack>
       </Box>
@@ -467,7 +536,7 @@ export function Eight() {
             Core
           </Text>
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
-          Squat with overhead tricep extension
+            Squat with overhead tricep extension
           </Heading>
         </Stack>
       </Box>
@@ -525,7 +594,7 @@ export function Nine() {
             Core
           </Text>
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
-          Curtsy lunge side kick raise
+            Curtsy lunge side kick raise
           </Heading>
         </Stack>
       </Box>
@@ -583,7 +652,7 @@ export function Ten() {
             Core
           </Text>
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
-          Sumo side bends
+            Sumo side bends
           </Heading>
         </Stack>
       </Box>
@@ -641,7 +710,7 @@ export function Eleven() {
             Core
           </Text>
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
-          Plank bird dog
+            Plank bird dog
           </Heading>
         </Stack>
       </Box>
@@ -699,7 +768,7 @@ export function Twelve() {
             Core
           </Text>
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
-          Side lunge front raise
+            Side lunge front raise
           </Heading>
         </Stack>
       </Box>
