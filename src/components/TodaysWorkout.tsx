@@ -6,6 +6,7 @@ import Exercise from "./Exercise";
 export default function TodaysWorkot() {
   let begin = false;
   const [current, setCurrent] = useState(<div></div>);
+  const [workouts, setWorkouts] = useState([]);
   let started = (
     <Box>
       <WorkoutItem />

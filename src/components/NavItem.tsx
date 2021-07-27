@@ -7,7 +7,7 @@ type NavItemProps = {
   title: string;
 };
 export default function NavItem({ path, title }: NavItemProps) {
-  console.log(path);
+  console.log(typeof NavLink);
   return (
     <Link as={NavLink} to={path} paddingRight="1">
       <Button background="teal">{title}</Button>

@@ -6,8 +6,9 @@ import { Route, Switch } from "react-router-dom";
 import create from "zustand";
 import { persist } from "zustand/middleware";
 import Navbar from "./components/NavBar";
-import TodaysWorkot from "./components/TodaysWorkout";
+import TodaysWorkout from "./components/TodaysWorkout";
 import { Box } from "@chakra-ui/react";
+import { Progress } from "./components/Progress";
 
 type State = {
   token: string | null;
@@ -41,6 +42,9 @@ function App() {
     <Box>
       <Navbar />
       <Switch>
+        <Route path="/Progress">
+          <Progress />
+        </Route>
         <Route path="/Exercises">
           <Exercises />
         </Route>
@@ -48,7 +52,7 @@ function App() {
           <Weight />
         </Route>
         <Route path="/">
-          <TodaysWorkot />
+          <TodaysWorkout />
         </Route>
       </Switch>
     </Box>
