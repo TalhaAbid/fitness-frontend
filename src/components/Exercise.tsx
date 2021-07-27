@@ -73,7 +73,7 @@ export default function Exercise(props: exerciseProps) {
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
             {name}
           </Heading>
-          <Button colorScheme="teal">Add To Workout</Button>
+          <Button colorScheme="teal">Add</Button>
         </Stack>
       </Box>
       <Spacer />
@@ -133,6 +133,7 @@ export function One() {
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
             Plie squat scoop up
           </Heading>
+          <Button colorScheme="teal">Add</Button>
         </Stack>
       </Box>
       <Spacer />
@@ -192,6 +193,7 @@ export function Two() {
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
             Squat curl
           </Heading>
+          <Button colorScheme="teal">Add</Button>
         </Stack>
       </Box>
       <Spacer />
@@ -250,6 +252,7 @@ export function Three() {
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
             Cossack squat
           </Heading>
+          <Button colorScheme="teal">Add</Button>
         </Stack>
       </Box>
       <Spacer />
@@ -308,6 +311,7 @@ export function Four() {
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
             Diamond kicks
           </Heading>
+          <Button colorScheme="teal">Add</Button>
         </Stack>
       </Box>
       <Spacer />
@@ -366,6 +370,7 @@ export function Five() {
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
             Split squat press exercise
           </Heading>
+          <Button colorScheme="teal">Add</Button>
         </Stack>
       </Box>
       <Spacer />
@@ -424,6 +429,7 @@ export function Six() {
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
             Deadlift upright row
           </Heading>
+          <Button colorScheme="teal">Add</Button>
         </Stack>
       </Box>
       <Spacer />
@@ -482,6 +488,7 @@ export function Seven() {
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
             Double pulse squat jump
           </Heading>
+          <Button colorScheme="teal">Add</Button>
         </Stack>
       </Box>
       <Spacer />
@@ -540,6 +547,7 @@ export function Eight() {
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
             Squat with overhead tricep extension
           </Heading>
+          <Button colorScheme="teal">Add</Button>
         </Stack>
       </Box>
       <Spacer />
@@ -598,6 +606,7 @@ export function Nine() {
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
             Curtsy lunge side kick raise
           </Heading>
+          <Button colorScheme="teal">Add</Button>
         </Stack>
       </Box>
       <Spacer />
@@ -656,6 +665,7 @@ export function Ten() {
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
             Sumo side bends
           </Heading>
+          <Button colorScheme="teal">Add</Button>
         </Stack>
       </Box>
       <Spacer />
@@ -714,6 +724,7 @@ export function Eleven() {
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
             Plank bird dog
           </Heading>
+          <Button colorScheme="teal">Add</Button>
         </Stack>
       </Box>
       <Spacer />
@@ -772,6 +783,7 @@ export function Twelve() {
           <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
             Side lunge front raise
           </Heading>
+          <Button colorScheme="teal">Add</Button>
         </Stack>
       </Box>
       <Spacer />
