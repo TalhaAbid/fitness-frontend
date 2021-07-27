@@ -1,7 +1,7 @@
 import React from "react";
 import Login from "./components/Login";
 import Exercises from "./components/Exercises";
-import Weight from "./components/Weight";
+import { Weight } from "./components/Weight";
 import { Route, Switch } from "react-router-dom";
 import create from "zustand";
 import { persist } from "zustand/middleware";
