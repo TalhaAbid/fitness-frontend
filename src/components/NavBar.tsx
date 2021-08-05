@@ -1,27 +1,29 @@
 import React from "react";
 import NavItem from "./NavItem";
-import { Flex, Box, Heading, Spacer, Link } from "@chakra-ui/react";
-
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom'
 
 export default function NavBar() {
   return (
-    <Flex bg="white" borderBottom="8px" padding="3px">
-      <Box>
-        <Heading>
-          {" "}
-          <Link to="/" as={NavLink}>
-            Corpus Opnus
-          </Link>
-        </Heading>
-      </Box>
-      <Spacer />
-      <Box>
-        <NavItem path="/" title="Todays Workout" />
-        <NavItem path="/Exercises" title="Discover Exercises" />
-        <NavItem path="/Weight" title="Weight Tracker" />
-        <NavItem path="/Progress" title="View Your Progress" />
-      </Box>
-    </Flex>
+    <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-indigo-500 mb-3">
+      <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
+        <div className="w-full relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start">
+          <NavLink className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white" to="#"> Corpus Opnus</NavLink>
+          <button className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none" type="button">
+            <span className="block relative w-6 h-px rounded-sm bg-white "></span>
+            <span className="block relative w-6 h-px rounded-sm bg-white mt-1"></span>
+            <span className="block relative w-6 h-px rounded-sm bg-white mt-1"></span>
+          </button>
+        </div>
+        <div className="lg:flex flex-grow items-center">
+          <ul className="flex flex-col lg:flex-row list-none mr-auto">
+            <NavItem path="/" title="Todays Workout" />
+            <NavItem path="/Exercises" title="Discover Exercises" />
+            <NavItem path="/Weight" title="Weight Tracker" />
+            <NavItem path="/Progress" title="View Your Progress" />
+          </ul>
+        </div>
+      </div>
+
+    </nav>
   );
 }

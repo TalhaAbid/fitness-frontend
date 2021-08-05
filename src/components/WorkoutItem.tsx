@@ -34,13 +34,13 @@ const useInterval = (callback: callbackFunction, delay: number | null) => {
 /**
  *
 type State = {
-	secondsRemaining: number;
-	status: STATUS;
-	progress: number;
-	sets: number;
-	secondsToDisplay: number;
-	minutesRemaining: number;
-	minutesToDisplay: number;
+  secondsRemaining: number;
+  status: STATUS;
+  progress: number;
+  sets: number;
+  secondsToDisplay: number;
+  minutesRemaining: number;
+  minutesToDisplay: number;
 };
  */
 const WorkoutItem = () => {
@@ -85,57 +85,13 @@ const WorkoutItem = () => {
     return <></>;
   }
   return (
-    <Box marginTop="4" border="4px" borderColor="royalblue" align="center">
-      <Text fontSize="4xl" align="center">
-        Bench press
-      </Text>
-      <Stack align="center">
-        <Stack direction={["column", "row"]}>
-          <Text fontSize="2xl">Sets: {sets}</Text>
-          <Text fontSize="2xl">Reps: 5</Text>
-        </Stack>
-      </Stack>
-      <Stack align="center">
-        <Text fontSize="3xl">
-          {minutesToDisplay} minutes {secondsToDisplay} seconds
-        </Text>
-        <Stack direction={["column", "row"]}>
-          <Button
-            isActive={active.start}
-            colorScheme="teal"
-            onClick={() => handleStart()}
-          >
-            Start
-          </Button>
-          <Button
-            isActive={active.stop}
-            colorScheme="teal"
-            onClick={() => handleStop()}
-          >
-            Stop
-          </Button>
-          <Button colorScheme="teal" onClick={() => handleReset()}>
-            Reset
-          </Button>
-          <Button colorScheme="teal" onClick={() => setSets(0)}>
-            Close
-          </Button>
-        </Stack>
-      </Stack>
-
-      <Stack pt="5px" paddingBottom="5px" align="center">
-        <Text fontSize="3xl">weight: 100 pounds</Text>
-        <Text fontSize="3xl">Put The Following Plates on Both sides</Text>
-        <Stack direction={["column", "row"]}>
-          {platesToPut.map((plate) => (
-            <Text fontSize="3xl" key={plate}>
-              {plate}{" "}
-            </Text>
-          ))}
-        </Stack>
-      </Stack>
-      <Progress value={progress} size="lg" colorScheme="teal" />
-    </Box>
+    <div>
+      <div>
+        <div>
+          <div></div>
+        </div>
+      </div>
+    </div>
   );
 };
 

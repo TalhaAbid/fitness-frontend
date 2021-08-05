@@ -3,5 +3,4 @@ import Exercise from 'react'
 
 
 export default function Workout() {
-
 }

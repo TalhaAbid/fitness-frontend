@@ -10,74 +10,22 @@ import {
   Button,
 } from "@chakra-ui/react";
 
-interface exerciseType {
-  name: string;
-  target: string;
-  imageSrc: string;
-}
+import { ExerciseProps } from '../types'
 
-interface exerciseProps {
-  exercise: exerciseType;
-}
-
-export default function Exercise(props: exerciseProps) {
+export default function Exercise(props: ExerciseProps) {
   const { name, target, imageSrc } = props.exercise;
   return (
-    <Box mb="14">
-      <Box
-        role={"group"}
-        p={6}
-        w="400px"
-        h="400px"
-        bg={useColorModeValue("white", "gray.800")}
-        boxShadow={"2xl"}
-        rounded={"lg"}
-        pos={"relative"}
-        zIndex={1}
-      >
-        <Box
-          rouned={"lg"}
-          mt={-12}
-          pos={"relative"}
-          height={"230px"}
-          _after={{
-            transition: "all .3s ease",
-            content: '""',
-            w: "full",
-            h: "full",
-            pos: "absolute",
-            top: 5,
-            left: 0,
-            backgroundImage: `url("../exercises_image/Plie_squat_scoop_up.gif")`,
-            filter: "blur(15px)",
-            zIndex: -1,
-          }}
-          _groupHover={{
-            _after: {
-              filter: "blur(20px)",
-            },
-          }}
-        >
-          <Image
-            src={imageSrc}
-            rouned={"lg"}
-            height={260}
-            width={300}
-            objectFit="fill"
-          />
-        </Box>
-        <Stack pt={10} align={"center"}>
-          <Text color={"gray.500"} fontSize={"sm"} textTransform={"uppercase"}>
-            {target}
-          </Text>
-          <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
-            {name}
-          </Heading>
-          <Button colorScheme="teal">Add</Button>
-        </Stack>
-      </Box>
-      <Spacer />
-    </Box>
+
+    <div className="w-full sm:w-1/2 md:w-1/3 mb-4 px-2">
+      <div className=" bg-white relative shadow-lg hover:shadow-xl transition duration-500 rounded-lg">
+        <img className="rouned-t-lg" src={imageSrc} alt={`${name}`} />
+        <div className="py-6 px-8 rounded-lg bg-white">
+          <h1 className="text-gray-700 font-bold text-2xl mb-3 hover:text-gray-900 hover:cursor-pointer">{name}</h1>
+          <h3 className="text-gray-500 block text-sm ">{target}</h3>
+          <button className="mt-6 py-2 px-4 bg-indigo-400 text-gray-800 font-bold rounded-lg shadow-md hover:shadow-lg transition duration-300 ">Add To Your Workout!</button>
+        </div>
+      </div>
+    </div >
   );
 }
 

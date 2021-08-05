@@ -6,11 +6,17 @@ type NavItemProps = {
   path: string;
   title: string;
 };
+
 export default function NavItem({ path, title }: NavItemProps) {
   console.log(typeof NavLink);
   return (
-    <Link as={NavLink} to={path} paddingRight="1">
-      <Button background="teal">{title}</Button>
-    </Link>
+    <li className="nav-item">
+      <NavLink className="px-3 py-2
+              flex items-center text-xs
+              uppercase font-bold leading-snug
+              text-white hover:opacity-75" to={path}>
+        <span>{title}</span>
+      </NavLink>
+    </li>
   );
 }
