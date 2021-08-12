@@ -9,6 +9,7 @@ import Navbar from "./components/NavBar";
 import TodaysWorkout from "./components/TodaysWorkout";
 import { Box } from "@chakra-ui/react";
 import { Progress } from "./components/Progress";
+import WorkoutEditor from './components/WorkoutEditor'
 
 type State = {
   token: string | null;
@@ -39,11 +40,14 @@ function App() {
   }
 
   return (
-    <Box>
+    <>
       <Navbar />
       <Switch>
         <Route path="/Progress">
           <Progress />
+        </Route>
+        <Route path="/Editor">
+          <WorkoutEditor />
         </Route>
         <Route path="/Exercises">
           <Exercises />
@@ -55,7 +59,7 @@ function App() {
           <TodaysWorkout />
         </Route>
       </Switch>
-    </Box>
+    </>
   );
 }
 
