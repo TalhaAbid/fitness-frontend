@@ -12,7 +12,7 @@ export default function Exercises() {
   return (
     <div>
       <div>
-        <div className="container mx-auto p-8">
+        <div className="container mx-auto p-10">
           <div className="flex flex-row flex-wrap -mx-2">
             {exercises.map((exercise) => (
               <Exercise key={exercise.name} exercise={exercise} />

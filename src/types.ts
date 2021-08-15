@@ -1,8 +1,10 @@
-export interface ExerciseItemPropTypes {
-    exercise: BodyWeightWorkoutType | BodyWeightWorkoutType;
-}
+
 export interface WorkoutItemType extends SetsType {
     weight: number;
+}
+
+export interface ExerciseItemPropTypes {
+    exercise: BodyWeightWorkoutType | WorkoutItemType;
 }
 
 export interface BodyWeightWorkoutType extends SetsType {

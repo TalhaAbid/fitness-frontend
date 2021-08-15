@@ -5,7 +5,7 @@ export default function Exercise(props: ExerciseProps) {
   const { name, target, imageSrc } = props.exercise;
   return (
 
-    <div className="w-full sm:w-1/2 md:w-1/3 mb-4 px-2">
+    <div className=" w-full sm:w-1/2 md:w-1/3 mb-4 px-2">
       <div className=" bg-white relative shadow-lg hover:shadow-xl transition duration-500 rounded-lg">
         <img className="rouned-t-lg object-scale-down" src={imageSrc} alt={`${name}`} />
         <div className="py-6 px-8 rounded-lg bg-white">
