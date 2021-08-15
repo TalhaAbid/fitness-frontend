@@ -74,7 +74,7 @@ const WorkoutItem = ({ exercise }: ExerciseItemPropTypes) => {
             <p className="text-xl">{excCasted.weight === undefined ? '' : `Weight: ${excCasted.weight} pounds`}</p>
             <p className="text-xl">{minutesToDisplay}:{secondsToDisplay}</p>
             <p className="text-xl">{excCasted.weight !== undefined ? 'Put these plates on the bar: ' : ''}</p>
-            <p className="text-xl">{excCasted.weight !== undefined ? PlatesCalculator(excCasted.weight) : ''}</p>
+            {excCasted.weight !== undefined ? PlatesCalculator(excCasted.weight).map(weight => <span className="px-2 text-xl">{weight}</span>) : ''}
             <div className="md:space-x-10 space-y-10 md:space-y-0">
               <button onClick={() => handleStart()} className={`py-3 px-6 text-white rounded-lg bg-purple-${status === STATUS.STARTED ? 800 : 600} shadow-lg block md:inline-block`}>Start</button>
               <button onClick={() => handleStop()} className={`py-3 px-6 text-white rounded-lg bg-red-${status === STATUS.STOPPED ? 800 : 500} shadow-lg block md:inline-block `}>Stop</button>

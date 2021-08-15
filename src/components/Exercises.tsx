@@ -1,11 +1,6 @@
 import React from "react";
 import Exercise, { exerciseList } from "./Exercise";
 import { ExerciseType } from '../types'
-interface exerciseType {
-  name: string;
-  target: string;
-  imageSrc: string;
-}
 
 export default function Exercises() {
   const exercises: Array<ExerciseType> = exerciseList;

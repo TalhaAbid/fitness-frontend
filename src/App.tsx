@@ -1,15 +1,26 @@
 import React from "react";
+
+
+///////////////////////////////////////////////////////////////////////////////
+//                             Component Imports                             //
+///////////////////////////////////////////////////////////////////////////////
+
 import Login from "./components/Login";
 import Exercises from "./components/Exercises";
 import { Weight } from "./components/Weight";
 import { Route, Switch } from "react-router-dom";
-import create from "zustand";
-import { persist } from "zustand/middleware";
 import Navbar from "./components/NavBar";
 import TodaysWorkout from "./components/TodaysWorkout";
-import { Box } from "@chakra-ui/react";
 import { Progress } from "./components/Progress";
 import WorkoutEditor from './components/WorkoutEditor'
+
+///////////////////////////////////////////////////////////////////////////////
+//                              State Managment                              //
+///////////////////////////////////////////////////////////////////////////////
+
+
+import create from "zustand";
+import { persist } from "zustand/middleware";
 
 type State = {
   token: string | null;
