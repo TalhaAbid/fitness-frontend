@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Flex,
   Box,
@@ -13,8 +13,11 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
+
+import { login } from '../services/loginService'
+
 type LoginProps = {
-  setToken: (token: string, rememberPassword: boolean) => void;
+  setToken: (token: string, rememberToken: boolean) => void;
 };
 
 const Login = ({ setToken }: LoginProps) => {
@@ -22,6 +25,12 @@ const Login = ({ setToken }: LoginProps) => {
   const [password, setPassword] = React.useState<string>("");
   const [rememberPassword, setRememberPassword] =
     React.useState<boolean>(false);
+
+
+  const loginHandler = async () => {
+    const token = await login(username, password);
+    setToken(token, rememberPassword);
+  }
   return (
     <Flex
       minH={"100vh"}
@@ -77,7 +86,7 @@ const Login = ({ setToken }: LoginProps) => {
                 </Checkbox>
               </Stack>
               <Button
-                onClick={() => setToken(username, rememberPassword)}
+                onClick={loginHandler}
                 bg={"blue.400"}
                 color={"white"}
                 _hover={{ bg: "blue.500" }}
